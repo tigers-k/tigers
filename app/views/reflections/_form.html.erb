@@ -1,0 +1,53 @@
+<%= form_for(@reflection) do |f| %>
+  <% if @reflection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reflection.errors.count, "error") %> prohibited this reflection from being saved:</h2>
+
+      <ul>
+      <% @reflection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br>
+    <%= f.text_field :title, :size=>'60'%>
+  </div>
+  <div class="field">
+    <%= f.label :category1, "カテゴリ1" %><br>
+    <%= f.text_field :category1, :size=>'60' %>
+  </div>
+  <div class="field">
+    <%= f.label :category2, "カテゴリ21" %><br>
+    <%= f.text_field :category2, :size=>'60' %>
+  </div>
+  <div class="field">
+    <%= f.label :category3, "カテゴリ3" %><br>
+    <%= f.text_field :category3, :size=>'60' %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "内容" %><br>
+    <%= f.text_area :description, :size=>'60x5' %>
+  </div>
+  <div class="field">
+    <%= f.label :url, "URL" %><br>
+    <%= f.text_field :url, :size=>'60'  %>
+  </div>
+  <div class="field">
+    <%= f.label :picture, "画像" %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :date, "登録日" %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :publish, "公開可否" %><br>
+    <%= f.check_box :publish %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

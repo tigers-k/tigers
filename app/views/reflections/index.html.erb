@@ -1,0 +1,43 @@
+<h1>アイテムリスト</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th width="150">タイトル</th>
+      <th width="100">カテゴリ1</th>
+      <th width="100">カテゴリ2</th>
+      <th width="100">カテゴリ3</th>
+      <th width="200">内容</th>
+      <th width="200">Url</th>
+      <!--<th>Picture</th>-->
+      <th width="150">Date</th>
+      <!--<th>Publish</th>-->
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reflections.each do |reflection| %>
+      <tr>
+        <td><%= reflection.title %></td>
+        <td><%= reflection.category1 %></td>
+        <td><%= reflection.category2 %></td>
+        <td><%= reflection.category3 %></td>
+        <td><%= reflection.description %></td>
+        <td><%= reflection.url %></td>
+        <!--<td><%= reflection.picture %></td>-->
+        <td><%= reflection.date %></td>
+        <!--<td><%= reflection.publish %></td>-->
+        <td><%= link_to '表示', reflection %></td>
+        <td><%= link_to '編集', edit_reflection_path(reflection) %></td>
+        <td><%= link_to '削除', reflection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規追加', new_reflection_path %>

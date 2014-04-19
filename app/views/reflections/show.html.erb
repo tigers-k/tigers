@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @reflection.title %>
+</p>
+
+<p>
+  <strong>カテゴリ1:</strong>
+  <%= @reflection.category1 %>
+</p>
+
+<p>
+  <strong>カテゴリ2:</strong>
+  <%= @reflection.category2 %>
+</p>
+
+<p>
+  <strong>カテゴリ3:</strong>
+  <%= @reflection.category3 %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @reflection.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @reflection.url %>
+</p>
+
+<p>
+  <strong>画像:</strong>
+  <%= image_tag(@reflection.picture_url, width: 600) if @reflection.picture.present? %>
+</p>
+
+<p>
+  <strong>登録日:</strong>
+  <%= @reflection.date %>
+</p>
+
+<p>
+  <strong>公開可否:</strong>
+  <%= @reflection.publish %>
+</p>
+
+<%= link_to '編集', edit_reflection_path(@reflection) %> |
+<%= link_to '戻る', reflections_path %>
